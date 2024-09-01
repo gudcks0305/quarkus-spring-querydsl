@@ -1,5 +1,3 @@
-greeting:
-  message: "funk"
 
 quarkus:
   datasource:
@@ -10,7 +8,8 @@ quarkus:
     username: sa
     password: ""
     # 최대 커넥션 수 설정
-
+  smallrye-openapi:
+    path: /swagger
   # Hibernate 설정 (JPA 사용 시)
   hibernate-orm:
     dialect: org.hibernate.dialect.H2Dialect

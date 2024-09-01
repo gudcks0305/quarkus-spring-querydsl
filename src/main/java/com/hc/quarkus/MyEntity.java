@@ -1,11 +1,11 @@
 package com.hc.quarkus;
 
 
-import static io.opentelemetry.instrumentation.api.internal.cache.concurrentlinkedhashmap.Weighers.list;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 /**
  * Example JPA entity.
@@ -21,6 +21,8 @@ import jakarta.persistence.Id;
  * List<MyEntity> entities = em.createQuery("from MyEntity", MyEntity.class).getResultList(); } }
  */
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class MyEntity  {
     @Id
     @GeneratedValue
@@ -28,9 +30,8 @@ public class MyEntity  {
 
     public String field;
 
-    public void test(){
-        list(
-
-        );
+    public MyEntity(String field) {
+        this.field = field;
     }
+
 }
